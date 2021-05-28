@@ -2,6 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Login from './components/Login';
 import Header from './components/Header';
+import Home from './components/Home';
+import Detail from './components/Detail';
 
 function App() {
   return (
@@ -9,7 +11,11 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" component={Login}/>
+          <Route exact path="/" component={Login}/>
+          <Route path="/home" component={Home} />
+          <Route path="/detail/:id">
+            <Detail />
+          </Route>
         </Switch>
       </Router>
     </div>
